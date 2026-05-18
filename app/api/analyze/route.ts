@@ -5,7 +5,8 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { parser, grammar, tokens = [], action } = body
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"
+    //const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000" || "https://pfinal-psi.vercel.app"
+    const API_URL = "https://pfinal-psi.vercel.app"
     const endpoint = action === "build" ? "/visualization/build" : "/visualization/parse"
 
     const payload: Record<string, unknown> = {
